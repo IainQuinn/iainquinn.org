@@ -13,7 +13,7 @@ jobs:
         with:
           node-version: 18
           cache: "pnpm"
-
+      - run: npm install --global pnpm@latest
       - run: corepack enable
       - run: pnpm install
       - run: pnpm build
