@@ -14,7 +14,10 @@ jobs:
           node-version: 18
           cache: "pnpm"
 
-      # Ensure pnpm is installed via corepack
+      # Explicitly install pnpm
+      - run: npm install -g pnpm
+
+      # Ensure pnpm is installed via corepack (optional but can be removed)
       - run: corepack enable
       - run: corepack prepare pnpm@latest --activate
 
