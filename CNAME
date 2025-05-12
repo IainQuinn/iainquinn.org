@@ -1,7 +1,0 @@
-- name: Deploy to GitHub Pages
-  uses: peaceiris/actions-gh-pages@v3
-  with:
-    github_token: ${{ secrets.GITHUB_TOKEN }}
-    publish_branch: gh-pages # (default) you can omit if you like
-    publish_dir: ./dist
-    cname: iainquinn.org # writes a CNAME file for you
