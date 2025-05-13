@@ -1,14 +1,48 @@
-import { Title } from "@mantine/core";
+import { useState } from "react";
+import { Burger, Container, Group, Title } from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
+import classes from "./Header.module.css";
+import { IconCode } from "@tabler/icons-react";
+
+const links = [
+  { link: "/about", label: "Features" },
+  { link: "/pricing", label: "Pricing" },
+  { link: "/learn", label: "Learn" },
+  { link: "/About", label: "About" },
+];
 
 export function Header() {
+  const [opened, { toggle }] = useDisclosure(false);
+  const [active, setActive] = useState(links[0].link);
+
+  const items = links.map((link) => (
+    <a
+      key={link.label}
+      href={link.link}
+      className={classes.link}
+      data-active={active === link.link || undefined}
+      onClick={(event) => {
+        event.preventDefault();
+        setActive(link.link);
+      }}
+    >
+      {link.label}
+    </a>
+  ));
+
   return (
-    <>
-      <Title order={1}>This is h1 title</Title>
-      <Title order={2}>This is h2 title</Title>
-      <Title order={3}>This is h3 title</Title>
-      <Title order={4}>This is h4 title</Title>
-      <Title order={5}>This is h5 title</Title>
-      <Title order={6}>This is h6 title</Title>
-    </>
+    <header className={classes.header}>
+      <Container size="md" className={classes.inner}>
+        <Group>
+          <IconCode size={28} />
+          <Title order={3}> iainquinn.org</Title>
+        </Group>
+        <Group gap={5} visibleFrom="xs">
+          {items}
+        </Group>
+
+        <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
+      </Container>
+    </header>
   );
 }
