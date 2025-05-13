@@ -15,7 +15,7 @@ export function HeroImageRight() {
                 variant="gradient"
                 gradient={{ from: "pink", to: "yellow" }}
               >
-                fully featured
+                hello world
               </Text>{" "}
               React components library
             </Title>
