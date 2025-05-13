@@ -21,7 +21,7 @@ export function Layout() {
       </Box>
 
       {/* Main content */}
-      <Box component="main" style={{ flex: "1 1 auto", padding: "1rem" }}>
+      <Box component="main" style={{ flex: "1 1 auto" }}>
         <Outlet />
       </Box>
 

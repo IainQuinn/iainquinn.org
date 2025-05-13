@@ -32,10 +32,13 @@ export function Header() {
 
   return (
     <header className={classes.header}>
-      <Container size="md" className={classes.inner}>
-        <Group>
-          <IconCode size={28} />
-          <Title order={3}> iainquinn.org</Title>
+      <Container size="lg" className={classes.inner}>
+        <Group align="center">
+          <IconCode size={48} />
+          <Title mb={4} order={1}>
+            {" "}
+            iainquinn.org
+          </Title>
         </Group>
         <Group gap={5} visibleFrom="xs">
           {items}
