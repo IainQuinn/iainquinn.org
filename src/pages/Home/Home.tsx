@@ -1,4 +1,4 @@
-import { Container, Title, Text } from "@mantine/core";
+import { Container, Title, Text, Paper, Center, Stack } from "@mantine/core";
 
 export default function Home() {
   return (
@@ -8,6 +8,13 @@ export default function Home() {
           Home{" "}
         </Title>
         <Text> This is the home page</Text>
+        <Center>
+          <Stack>
+            <Paper shadow="xs" p="md" withBorder radius={"md"}>
+              <Text>This is some text</Text>
+            </Paper>
+          </Stack>
+        </Center>
       </Container>
     </>
   );

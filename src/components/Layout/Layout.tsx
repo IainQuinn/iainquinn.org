@@ -6,19 +6,27 @@ import { Footer } from "../Footer/Footer";
 
 export function Layout() {
   return (
-    <Container fluid p={0}>
+    <Container
+      fluid
+      p={0}
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "100vh",
+      }}
+    >
       {/* Header */}
-      <Box component="header">
+      <Box component="header" style={{ flex: "0 0 auto" }}>
         <Header />
       </Box>
 
       {/* Main content */}
-      <Box component="main">
+      <Box component="main" style={{ flex: "1 1 auto", padding: "1rem" }}>
         <Outlet />
       </Box>
 
       {/* Footer */}
-      <Box component="footer">
+      <Box component="footer" style={{ flex: "0 0 auto" }}>
         <Footer />
       </Box>
     </Container>
