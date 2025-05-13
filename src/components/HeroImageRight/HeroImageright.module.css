@@ -63,8 +63,8 @@
 }
 
 .control {
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
   font-family: Outfit, var(--mantine-font-family);
   font-size: 22px;
 
