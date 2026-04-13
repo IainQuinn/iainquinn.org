@@ -1,0 +1,56 @@
+.sectionLabel {
+  font-family: "JetBrains Mono", monospace;
+  font-size: var(--mantine-font-size-xs);
+  color: var(--mantine-color-amber-5);
+  opacity: 0.8;
+  letter-spacing: 0.05em;
+}
+
+.pageTitle {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 36px !important;
+  font-weight: 700;
+  color: var(--mantine-color-phosphor-5);
+  line-height: 1.2;
+
+  @media (max-width: 768px) {
+    font-size: 26px !important;
+  }
+}
+
+.terminal {
+  border: 1px solid var(--mantine-color-phosphor-5);
+  padding: var(--mantine-spacing-xl);
+  background-color: light-dark(#f5fff5, #060e1a);
+}
+
+.terminalPrompt {
+  font-family: "JetBrains Mono", monospace;
+  font-size: var(--mantine-font-size-sm);
+  color: var(--mantine-color-phosphor-5);
+}
+
+.terminalOutput {
+  font-family: "JetBrains Mono", monospace;
+  font-size: var(--mantine-font-size-sm);
+  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-1));
+}
+
+.terminalItem {
+  font-family: "JetBrains Mono", monospace;
+  font-size: var(--mantine-font-size-sm);
+  color: var(--mantine-color-amber-5);
+  opacity: 0.85;
+}
+
+.terminalCursor {
+  font-family: "JetBrains Mono", monospace;
+  font-size: var(--mantine-font-size-sm);
+  color: var(--mantine-color-phosphor-5);
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}

@@ -1,0 +1,20 @@
+.categoryLabel {
+  font-family: "JetBrains Mono", monospace;
+  font-size: var(--mantine-font-size-xs);
+  color: var(--mantine-color-amber-5);
+  opacity: 0.8;
+  letter-spacing: 0.05em;
+}
+
+.badge {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  cursor: default;
+
+  @mixin hover {
+    background-color: var(--mantine-color-phosphor-5);
+    color: #060e1a;
+  }
+}

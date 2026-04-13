@@ -1,30 +1,35 @@
 .footer {
-  margin-top: 120px;
   padding-top: calc(var(--mantine-spacing-xl) * 2);
-  padding-bottom: calc(var(--mantine-spacing-xl) * 2);
-  background-color: light-dark(
-    var(--mantine-color-gray-0),
-    var(--mantine-color-dark-6)
-  );
-  border-top: 1px solid
-    light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-5));
+  padding-bottom: var(--mantine-spacing-xl);
+  background-color: light-dark(var(--mantine-color-gray-0), #060e1a);
+  border-top: 1px solid var(--mantine-color-phosphor-5);
+  margin-top: auto;
 }
 
 .logo {
-  max-width: 200px;
+  max-width: 240px;
 
-  @media (max-width: mantine-breakpoint-sm) {
+  @media (max-width: 576px) {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 100%;
   }
 }
 
-.description {
-  margin-top: 5px;
+.logoText {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 15px !important;
+  font-weight: 700;
+  color: var(--mantine-color-phosphor-5);
+}
 
-  @media (max-width: mantine-breakpoint-sm) {
-    margin-top: var(--mantine-spacing-xs);
+.description {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  line-height: 1.5;
+
+  @media (max-width: 576px) {
     text-align: center;
   }
 }
@@ -33,43 +38,49 @@
   display: flex;
   justify-content: space-between;
 
-  @media (max-width: mantine-breakpoint-sm) {
+  @media (max-width: 576px) {
     flex-direction: column;
     align-items: center;
+    gap: var(--mantine-spacing-xl);
   }
 }
 
 .groups {
   display: flex;
   flex-wrap: wrap;
+  gap: var(--mantine-spacing-xl);
 
-  @media (max-width: mantine-breakpoint-sm) {
+  @media (max-width: 576px) {
     display: none;
   }
 }
 
 .wrapper {
-  width: 160px;
+  min-width: 120px;
+}
+
+.groupTitle {
+  font-family: "JetBrains Mono", monospace;
+  font-size: var(--mantine-font-size-xs);
+  color: var(--mantine-color-amber-5);
+  opacity: 0.8;
+  margin-bottom: var(--mantine-spacing-xs);
+  letter-spacing: 0.05em;
 }
 
 .link {
   display: block;
+  font-family: "JetBrains Mono", monospace;
   color: light-dark(var(--mantine-color-gray-6), var(--mantine-color-dark-1));
   font-size: var(--mantine-font-size-sm);
-  padding-top: 3px;
-  padding-bottom: 3px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  text-decoration: none;
+  transition: color 0.15s ease;
 
   &:hover {
-    text-decoration: underline;
+    color: var(--mantine-color-phosphor-5);
   }
-}
-
-.title {
-  font-size: var(--mantine-font-size-lg);
-  font-weight: 500;
-  font-family: Outfit, var(--mantine-font-family);
-  margin-bottom: calc(var(--mantine-spacing-xs) / 2);
-  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
 }
 
 .afterFooter {
@@ -77,18 +88,18 @@
   justify-content: space-between;
   align-items: center;
   margin-top: var(--mantine-spacing-xl);
-  padding-top: var(--mantine-spacing-xl);
-  padding-bottom: var(--mantine-spacing-xl);
+  padding-top: var(--mantine-spacing-md);
   border-top: 1px solid
-    light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-4));
+    light-dark(var(--mantine-color-gray-2), rgba(57, 255, 20, 0.15));
 
-  @media (max-width: mantine-breakpoint-sm) {
+  @media (max-width: 576px) {
     flex-direction: column;
+    gap: var(--mantine-spacing-sm);
   }
 }
 
 .social {
-  @media (max-width: mantine-breakpoint-sm) {
+  @media (max-width: 576px) {
     margin-top: var(--mantine-spacing-xs);
   }
 }

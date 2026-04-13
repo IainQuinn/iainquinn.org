@@ -1,0 +1,27 @@
+.sectionLabel {
+  font-family: "JetBrains Mono", monospace;
+  font-size: var(--mantine-font-size-xs);
+  color: var(--mantine-color-amber-5);
+  opacity: 0.8;
+  letter-spacing: 0.05em;
+}
+
+.pageTitle {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 36px !important;
+  font-weight: 700;
+  color: var(--mantine-color-phosphor-5);
+  line-height: 1.2;
+
+  @media (max-width: 768px) {
+    font-size: 26px !important;
+  }
+}
+
+.subtitle {
+  font-family: "JetBrains Mono", monospace;
+  font-size: var(--mantine-font-size-sm);
+  color: light-dark(var(--mantine-color-gray-6), var(--mantine-color-dark-2));
+  max-width: 560px;
+  line-height: 1.7;
+}

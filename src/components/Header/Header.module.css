@@ -1,38 +1,68 @@
 .header {
-  height: 72px;
-  margin-bottom: 0px;
-  margin-top: 1%;
+  height: 64px;
   background-color: var(--mantine-color-body);
-  border-bottom: 1px solid
-    light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+  border-bottom: 1px solid var(--mantine-color-phosphor-5);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .inner {
-  height: 56px;
+  height: 64px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.logo {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logoText {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px !important;
+  font-weight: 700;
+  color: var(--mantine-color-phosphor-5);
+  letter-spacing: -0.3px;
 }
 
 .link {
   display: block;
   line-height: 1;
   padding: 8px 12px;
-  border-radius: var(--mantine-radius-sm);
+  border-radius: 0;
   text-decoration: none;
   color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
   font-size: var(--mantine-font-size-sm);
   font-weight: 500;
+  font-family: "JetBrains Mono", monospace;
+  border: 1px solid transparent;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease;
 
   @mixin hover {
-    background-color: light-dark(
-      var(--mantine-color-gray-0),
-      var(--mantine-color-dark-6)
-    );
+    border-color: var(--mantine-color-phosphor-5);
+    color: var(--mantine-color-phosphor-5);
   }
 
-  [data-mantine-color-scheme] &[data-active] {
-    background-color: var(--mantine-color-blue-filled);
-    color: var(--mantine-color-white);
+  &[data-active] {
+    color: var(--mantine-color-phosphor-5);
+    border-color: var(--mantine-color-phosphor-5);
+  }
+}
+
+.themeToggle {
+  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
+  border: 1px solid transparent;
+  border-radius: 0;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease;
+
+  @mixin hover {
+    border-color: var(--mantine-color-amber-5);
+    color: var(--mantine-color-amber-5);
   }
 }

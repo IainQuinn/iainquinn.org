@@ -1,0 +1,58 @@
+.sectionLabel {
+  font-family: "JetBrains Mono", monospace;
+  font-size: var(--mantine-font-size-xs);
+  color: var(--mantine-color-amber-5);
+  opacity: 0.8;
+  letter-spacing: 0.05em;
+}
+
+.pageTitle {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 36px !important;
+  font-weight: 700;
+  color: var(--mantine-color-phosphor-5);
+  line-height: 1.2;
+
+  @media (max-width: 768px) {
+    font-size: 26px !important;
+  }
+}
+
+.subtitle {
+  font-family: "JetBrains Mono", monospace;
+  font-size: var(--mantine-font-size-sm);
+  color: light-dark(var(--mantine-color-gray-6), var(--mantine-color-dark-2));
+  line-height: 1.7;
+}
+
+.terminal {
+  border: 1px solid var(--mantine-color-phosphor-5);
+  padding: var(--mantine-spacing-xl);
+  background-color: light-dark(#f5fff5, #060e1a);
+}
+
+.terminalPrompt {
+  font-family: "JetBrains Mono", monospace;
+  font-size: var(--mantine-font-size-sm);
+  color: var(--mantine-color-phosphor-5);
+}
+
+.terminalOutput {
+  font-family: "JetBrains Mono", monospace;
+  font-size: var(--mantine-font-size-sm);
+  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-1));
+  line-height: 1.6;
+}
+
+.linkButton {
+  font-family: "JetBrains Mono", monospace;
+  font-size: var(--mantine-font-size-sm);
+  border-radius: 0;
+}
+
+.note {
+  font-family: "JetBrains Mono", monospace;
+  font-size: var(--mantine-font-size-xs);
+  color: light-dark(var(--mantine-color-gray-5), var(--mantine-color-dark-3));
+  opacity: 0.7;
+}

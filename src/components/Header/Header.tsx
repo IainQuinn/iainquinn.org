@@ -1,51 +1,116 @@
-import { useState } from "react";
-import { Burger, Container, Group, Title } from "@mantine/core";
+import { Link, useLocation } from "react-router-dom";
+import {
+  ActionIcon,
+  Burger,
+  Container,
+  Drawer,
+  Group,
+  Stack,
+  Text,
+  Title,
+  useMantineColorScheme,
+} from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
+import { IconCode, IconMoon, IconSun } from "@tabler/icons-react";
 import classes from "./Header.module.css";
-import { IconCode } from "@tabler/icons-react";
 
 const links = [
-  { link: "/about", label: "Features" },
-  { link: "/pricing", label: "Pricing" },
-  { link: "/learn", label: "Learn" },
-  { link: "/About", label: "About" },
+  { link: "/about", label: "About" },
+  { link: "/projects", label: "Projects" },
+  { link: "/blog", label: "Blog" },
+  { link: "/contact", label: "Contact" },
 ];
 
 export function Header() {
-  const [opened, { toggle }] = useDisclosure(false);
-  const [active, setActive] = useState(links[0].link);
+  const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
+    useDisclosure(false);
+  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+  const location = useLocation();
 
-  const items = links.map((link) => (
-    <a
+  const navItems = links.map((link) => (
+    <Link
       key={link.label}
-      href={link.link}
+      to={link.link}
       className={classes.link}
-      data-active={active === link.link || undefined}
-      onClick={(event) => {
-        event.preventDefault();
-        setActive(link.link);
-      }}
+      data-active={location.pathname === link.link || undefined}
+      onClick={closeDrawer}
     >
       {link.label}
-    </a>
+    </Link>
   ));
 
   return (
-    <header className={classes.header}>
-      <Container size="lg" className={classes.inner}>
-        <Group align="center">
-          <IconCode size={48} />
-          <Title mb={4} order={1}>
-            {" "}
-            iainquinn.org
-          </Title>
-        </Group>
-        <Group gap={5} visibleFrom="xs">
-          {items}
-        </Group>
+    <>
+      <header className={classes.header}>
+        <Container size="xl" className={classes.inner}>
+          <Link to="/" className={classes.logo}>
+            <Group align="center" gap={8}>
+              <IconCode size={32} color="var(--mantine-color-phosphor-5)" />
+              <Title order={3} className={classes.logoText}>
+                iainquinn.org
+              </Title>
+            </Group>
+          </Link>
 
-        <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
-      </Container>
-    </header>
+          <Group gap={4} visibleFrom="sm">
+            {navItems}
+            <ActionIcon
+              variant="subtle"
+              size="lg"
+              onClick={() => toggleColorScheme()}
+              aria-label="Toggle colour scheme"
+              className={classes.themeToggle}
+            >
+              {colorScheme === "dark" ? (
+                <IconSun size={18} />
+              ) : (
+                <IconMoon size={18} />
+              )}
+            </ActionIcon>
+          </Group>
+
+          <Group hiddenFrom="sm" gap={8}>
+            <ActionIcon
+              variant="subtle"
+              size="lg"
+              onClick={() => toggleColorScheme()}
+              aria-label="Toggle colour scheme"
+              className={classes.themeToggle}
+            >
+              {colorScheme === "dark" ? (
+                <IconSun size={18} />
+              ) : (
+                <IconMoon size={18} />
+              )}
+            </ActionIcon>
+            <Burger
+              opened={drawerOpened}
+              onClick={toggleDrawer}
+              size="sm"
+              color="var(--mantine-color-phosphor-5)"
+            />
+          </Group>
+        </Container>
+      </header>
+
+      <Drawer
+        opened={drawerOpened}
+        onClose={closeDrawer}
+        title={
+          <Group gap={8}>
+            <IconCode size={24} color="var(--mantine-color-phosphor-5)" />
+            <Text fw={700} ff='"JetBrains Mono", monospace' size="sm">
+              iainquinn.org
+            </Text>
+          </Group>
+        }
+        hiddenFrom="sm"
+        size="xs"
+      >
+        <Stack gap={4} mt="md">
+          {navItems}
+        </Stack>
+      </Drawer>
+    </>
   );
 }
