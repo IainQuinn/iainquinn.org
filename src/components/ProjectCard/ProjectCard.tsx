@@ -55,11 +55,16 @@ export function ProjectCard({ project }: ProjectCardProps) {
               radius={0}
               size="sm"
               className={classes.tag}
+              classNames={{ label: classes.tagLabel }}
             >
               {tag}
             </Badge>
           ))}
         </Group>
+
+        {project.date && (
+          <Text className={classes.date}>{project.date}</Text>
+        )}
       </Stack>
     </Card>
   );

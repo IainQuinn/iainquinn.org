@@ -36,6 +36,16 @@
   letter-spacing: 0.05em;
 }
 
+.tagLabel {
+  text-transform: none;
+}
+
+.date {
+  font-family: "JetBrains Mono", monospace;
+  font-size: var(--mantine-font-size-xs);
+  color: light-dark(var(--mantine-color-gray-5), var(--mantine-color-dark-3));
+}
+
 .linkButton {
   font-family: "JetBrains Mono", monospace;
   font-size: var(--mantine-font-size-sm);

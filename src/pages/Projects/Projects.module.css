@@ -25,3 +25,13 @@
   max-width: 560px;
   line-height: 1.7;
 }
+
+.categoryLabel {
+  font-family: "JetBrains Mono", monospace;
+  font-size: var(--mantine-font-size-xs);
+  color: var(--mantine-color-amber-5);
+  opacity: 0.8;
+  letter-spacing: 0.05em;
+  padding-top: var(--mantine-spacing-sm);
+  border-top: 1px solid light-dark(var(--mantine-color-gray-2), rgba(57, 255, 20, 0.15));
+}

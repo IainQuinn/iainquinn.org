@@ -85,6 +85,9 @@ export default function ProjectDetail() {
             >
               {statusLabels[project.status]}
             </Badge>
+            {project.date && (
+              <Text className={classes.date}>{project.date}</Text>
+            )}
           </Group>
         </div>
 
@@ -115,8 +118,9 @@ export default function ProjectDetail() {
                 color="phosphor"
                 radius={0}
                 className={classes.tag}
+                classNames={{ label: classes.tagLabel }}
               >
-                #{tag.replace(/\s+/g, "_").toUpperCase()}
+                {tag}
               </Badge>
             ))}
           </Group>

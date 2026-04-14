@@ -1,7 +1,13 @@
-import { Container, Divider, SimpleGrid, Stack, Text, Title } from "@mantine/core";
+import { Container, SimpleGrid, Stack, Text, Title } from "@mantine/core";
 import { ProjectCard } from "../../components/ProjectCard/ProjectCard";
 import { projects } from "../../data/projects";
 import classes from "./Projects.module.css";
+
+const softwareProjects = projects.filter(
+  (p) => p.category === "software" || p.category === "science",
+);
+const hardwareProjects = projects.filter((p) => p.category === "hardware");
+const researchProjects = projects.filter((p) => p.category === "research");
 
 export default function Projects() {
   return (
@@ -18,10 +24,26 @@ export default function Projects() {
           </Text>
         </div>
 
-        <Divider color="phosphor" opacity={0.3} />
+        <Text className={classes.categoryLabel}>{"// software"}</Text>
 
         <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing="md">
-          {projects.map((project) => (
+          {softwareProjects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </SimpleGrid>
+
+        <Text className={classes.categoryLabel}>{"// hardware"}</Text>
+
+        <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing="md">
+          {hardwareProjects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </SimpleGrid>
+
+        <Text className={classes.categoryLabel}>{"// research"}</Text>
+
+        <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing="md">
+          {researchProjects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </SimpleGrid>

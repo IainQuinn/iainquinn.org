@@ -2,12 +2,14 @@
   "name": "iainquinn.org",
   "homepage": "https://iainquinn.org/",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
+    "typecheck": "tsc -b --noEmit",
+    "check": "npm run typecheck && npm run lint",
     "preview": "vite preview"
   },
   "dependencies": {
