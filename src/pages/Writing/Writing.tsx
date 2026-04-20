@@ -1,12 +1,12 @@
 import { Container, Divider, Stack, Text, Title } from "@mantine/core";
-import classes from "./Blog.module.css";
+import classes from "./writing.module.css";
 
-export default function Blog() {
+export default function Writing() {
   return (
     <Container size="md" py="xl">
       <Stack gap="xl">
         <div>
-          <Text className={classes.sectionLabel}>{"// blog"}</Text>
+          <Text className={classes.sectionLabel}>{"// writing"}</Text>
           <Title order={1} className={classes.pageTitle} mt="xs">
             Writing
           </Title>

@@ -17,7 +17,7 @@ import classes from "./Header.module.css";
 const links = [
   { link: "/about", label: "About" },
   { link: "/projects", label: "Projects" },
-  { link: "/blog", label: "Blog" },
+  { link: "/writing", label: "Writing" },
   { link: "/contact", label: "Contact" },
 ];
 
