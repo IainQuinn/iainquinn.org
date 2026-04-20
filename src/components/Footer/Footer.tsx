@@ -11,7 +11,7 @@ import classes from "./Footer.module.css";
 const navLinks = [
   { label: "About", link: "/about" },
   { label: "Projects", link: "/projects" },
-  { label: "Blog", link: "/blog" },
+  { label: "writing", link: "/writing" },
   { label: "Contact", link: "/contact" },
 ];
 
@@ -27,7 +27,7 @@ export function Footer() {
             </Title>
           </Group>
           <Text size="xs" c="dimmed" className={classes.description} mt={4}>
-            Full Stack Developer · Computational Chemist · Cheminformatician
+            Full Stack Developer Computational Chemist Cheminformatician
           </Text>
         </div>
 
