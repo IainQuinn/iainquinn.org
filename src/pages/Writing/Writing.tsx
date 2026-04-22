@@ -1,5 +1,5 @@
 import { Container, Divider, Stack, Text, Title } from "@mantine/core";
-import classes from "./writing.module.css";
+import classes from "./Writing.module.css";
 
 export default function Writing() {
   return (
