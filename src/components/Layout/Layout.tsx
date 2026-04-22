@@ -21,7 +21,7 @@ export function Layout() {
       </Box>
 
       {/* Main content */}
-      <Box component="main" style={{ flex: "1 1 auto" }}>
+      <Box component="main" style={{ flex: "1 1 auto", display: "flex", flexDirection: "column" }}>
         <Outlet />
       </Box>
 

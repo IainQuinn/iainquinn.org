@@ -18,7 +18,7 @@ const navLinks = [
 export function Footer() {
   return (
     <footer className={classes.footer}>
-      <Container className={classes.inner}>
+      <Container size="xl" className={classes.inner}>
         <div className={classes.logo}>
           <Group gap={8} align="center">
             <IconCode size={24} color="var(--mantine-color-phosphor-5)" />
@@ -79,7 +79,7 @@ export function Footer() {
         </div>
       </Container>
 
-      <Container className={classes.afterFooter}>
+      <Container size="xl" className={classes.afterFooter}>
         <Text c="dimmed" size="sm" ff='"JetBrains Mono", monospace'>
           © 2026 Iain Quinn. All rights reserved.
         </Text>
