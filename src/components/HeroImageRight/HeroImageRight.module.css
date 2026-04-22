@@ -7,7 +7,7 @@
   /* border-bottom: 1px solid #39ff14; */
   padding-top: calc(var(--mantine-spacing-md));
   padding-bottom: calc(var(--mantine-spacing-md));
-  min-height: 72vh;
+  min-height: 60vh;
   flex: 1 1 auto;
   display: flex;
   align-items: center;
