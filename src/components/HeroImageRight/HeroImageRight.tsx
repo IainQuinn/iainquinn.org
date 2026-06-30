@@ -23,7 +23,7 @@ export function HeroImageRight() {
                 to="/projects"
                 variant="filled"
                 size="md"
-                className={classes.control}
+                className={`${classes.control} ${classes.primary}`}
               >
                 View my work
               </Button>

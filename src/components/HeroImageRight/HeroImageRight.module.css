@@ -49,3 +49,15 @@
     width: 100%;
   }
 }
+
+/* Primary CTA: inverts with the theme (text colour as background, body as text). */
+.control.primary {
+  background-color: var(--mantine-color-text);
+  color: var(--mantine-color-body);
+  border: 1px solid var(--mantine-color-text);
+}
+
+.control.primary:hover {
+  background-color: var(--mantine-color-dimmed);
+  border-color: var(--mantine-color-dimmed);
+}
