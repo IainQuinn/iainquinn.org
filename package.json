@@ -2,7 +2,7 @@
   "name": "iainquinn.org",
   "homepage": "https://iainquinn.org/",
   "private": true,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "scripts": {
     "dev": "vite",

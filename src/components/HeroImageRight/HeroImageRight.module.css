@@ -1,12 +1,6 @@
 .root {
-  background-color: #060e1a;
-  background-image:
-    linear-gradient(rgba(57, 255, 20, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(57, 255, 20, 0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
-  /* border-bottom: 1px solid #39ff14; */
-  padding-top: calc(var(--mantine-spacing-md));
-  padding-bottom: calc(var(--mantine-spacing-md));
+  padding-top: var(--mantine-spacing-md);
+  padding-bottom: var(--mantine-spacing-md);
   min-height: 60vh;
   flex: 1 1 auto;
   display: flex;
@@ -23,20 +17,13 @@
   max-width: 680px;
 }
 
-.label {
-  font-family: "JetBrains Mono", monospace;
-  font-size: var(--mantine-font-size-sm);
-  color: #39ff14;
-  opacity: 0.7;
-  letter-spacing: 0.05em;
-}
-
 .title {
-  color: #f0f4f8;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "JetBrains Mono", monospace;
   font-weight: 700;
   line-height: 1.2;
+  letter-spacing: -0.02em;
   font-size: 52px;
+  color: var(--mantine-color-text);
 
   @media (max-width: 768px) {
     font-size: 34px;
@@ -45,38 +32,16 @@
 }
 
 .description {
-  color: rgba(240, 244, 248, 0.75);
   font-family: "JetBrains Mono", monospace;
   font-size: var(--mantine-font-size-md);
   max-width: 560px;
   line-height: 1.7;
-}
-
-.formula {
-  color: #39ff14;
-  font-family: "JetBrains Mono", monospace;
-  font-size: var(--mantine-font-size-sm);
-  opacity: 0.6;
-  letter-spacing: 0.03em;
+  color: var(--mantine-color-dimmed);
 }
 
 .control {
   font-family: "JetBrains Mono", monospace;
   font-size: var(--mantine-font-size-sm);
-  border-radius: 0;
-  border-width: 1px;
-  padding-left: 24px;
-  padding-right: 24px;
-
-  @media (max-width: 768px) {
-    width: 100%;
-  }
-}
-
-.controlSecondary {
-  font-family: "JetBrains Mono", monospace;
-  font-size: var(--mantine-font-size-sm);
-  border-radius: 0;
   padding-left: 24px;
   padding-right: 24px;
 

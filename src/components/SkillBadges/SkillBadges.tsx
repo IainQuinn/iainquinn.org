@@ -39,18 +39,16 @@ export function SkillBadges() {
       {skillGroups.map((group) => (
         <div key={group.category}>
           <Text className={classes.categoryLabel} mb="xs">
-            {"// "}{group.category.toLowerCase()}
+            {group.category}
           </Text>
           <Group gap="xs">
             {group.skills.map((skill) => (
               <Badge
                 key={skill}
                 variant="outline"
-                color="phosphor"
-                radius={0}
                 className={classes.badge}
               >
-                #{skill.replace(/\s+/g, "_").toUpperCase()}
+                {skill}
               </Badge>
             ))}
           </Group>

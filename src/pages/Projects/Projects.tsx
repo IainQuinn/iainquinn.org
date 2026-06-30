@@ -14,8 +14,8 @@ export default function Projects() {
     <Container size="lg" py="xl">
       <Stack gap="xl">
         <div>
-          <Text className={classes.sectionLabel}>{"// projects"}</Text>
-          <Title order={1} className={classes.pageTitle} mt="xs">
+          <Text className="section-label">projects</Text>
+          <Title order={1} className="page-title" mt="xs">
             My Work
           </Title>
           <Text className={classes.subtitle} mt="xs">
@@ -24,7 +24,7 @@ export default function Projects() {
           </Text>
         </div>
 
-        <Text className={classes.categoryLabel}>{"// software"}</Text>
+        <Text className={classes.categoryLabel}>software</Text>
 
         <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing="md">
           {softwareProjects.map((project) => (
@@ -32,7 +32,7 @@ export default function Projects() {
           ))}
         </SimpleGrid>
 
-        <Text className={classes.categoryLabel}>{"// hardware"}</Text>
+        <Text className={classes.categoryLabel}>hardware</Text>
 
         <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing="md">
           {hardwareProjects.map((project) => (
@@ -40,7 +40,7 @@ export default function Projects() {
           ))}
         </SimpleGrid>
 
-        <Text className={classes.categoryLabel}>{"// research"}</Text>
+        <Text className={classes.categoryLabel}>research</Text>
 
         <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing="md">
           {researchProjects.map((project) => (

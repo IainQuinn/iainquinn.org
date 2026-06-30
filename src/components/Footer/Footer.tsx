@@ -4,127 +4,58 @@ import {
   IconBrandYoutube,
   IconCode,
 } from "@tabler/icons-react";
-import { ActionIcon, Container, Group, Text, Title } from "@mantine/core";
-import { Link } from "react-router-dom";
+import { ActionIcon, Container, Group, Text } from "@mantine/core";
 import classes from "./Footer.module.css";
-
-const navLinks = [
-  { label: "About", link: "/about" },
-  { label: "Projects", link: "/projects" },
-  { label: "writing", link: "/writing" },
-  { label: "Contact", link: "/contact" },
-];
 
 export function Footer() {
   return (
     <footer className={classes.footer}>
       <Container size="xl" className={classes.inner}>
-        <div className={classes.logo}>
-          <Group gap={8} align="center">
-            <IconCode size={24} color="var(--mantine-color-phosphor-5)" />
-            <Title order={4} className={classes.logoText}>
-              iainquinn.org
-            </Title>
-          </Group>
-          <Text size="xs" c="dimmed" className={classes.description} mt={4}>
-            Full Stack Developer Computational Chemist Cheminformatician
-          </Text>
-        </div>
+        <Group gap={6} align="center">
+          <IconCode size={16} color="var(--mantine-color-text)" />
+          <Text className={classes.logoText}>iainquinn.org</Text>
+        </Group>
 
-        <div className={classes.groups}>
-          <div className={classes.wrapper}>
-            <Text className={classes.groupTitle}>{"// navigate"}</Text>
-            {navLinks.map((link) => (
-              <Text<typeof Link>
-                key={link.label}
-                className={classes.link}
-                component={Link}
-                to={link.link}
-              >
-                {link.label}
-              </Text>
-            ))}
-          </div>
-
-          <div className={classes.wrapper}>
-            <Text className={classes.groupTitle}>{"// connect"}</Text>
-            <Text<"a">
-              className={classes.link}
-              component="a"
-              href="https://github.com/IainQuinn"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </Text>
-            <Text<"a">
-              className={classes.link}
-              component="a"
-              href="https://www.linkedin.com/in/iain-quinn-/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </Text>
-            <Text<"a">
-              className={classes.link}
-              component="a"
-              href="https://www.youtube.com/@iainquinn"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              YouTube
-            </Text>
-          </div>
-        </div>
-      </Container>
-
-      <Container size="xl" className={classes.afterFooter}>
-        <Text c="dimmed" size="sm" ff='"JetBrains Mono", monospace'>
-          © 2026 Iain Quinn. All rights reserved.
+        <Text c="dimmed" size="xs" ff='"JetBrains Mono", monospace' className={classes.copyright}>
+          © 2026 Iain Quinn
         </Text>
 
-        <Group
-          gap={0}
-          className={classes.social}
-          justify="flex-end"
-          wrap="nowrap"
-        >
+        <Group gap={0} justify="flex-end" wrap="nowrap">
           <ActionIcon
-            size="lg"
-            color="gray"
+            size="md"
             variant="subtle"
             component="a"
             href="https://github.com/IainQuinn"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
+            style={{ color: "#ffffff" }}
           >
-            <IconBrandGithub size={18} stroke={1.5} />
+            <IconBrandGithub size={20} stroke={1.5} />
           </ActionIcon>
           <ActionIcon
-            size="lg"
-            color="gray"
+            size="md"
             variant="subtle"
             component="a"
             href="https://www.linkedin.com/in/iain-quinn-/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
+            style={{ color: "#0A66C2" }}
           >
-            <IconBrandLinkedin size={18} stroke={1.5} />
+            <IconBrandLinkedin size={20} stroke={1.5} />
           </ActionIcon>
           <ActionIcon
-            size="lg"
-            color="gray"
+            size="md"
             variant="subtle"
             component="a"
             href="https://www.youtube.com/@iainquinn"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="YouTube"
+            style={{ color: "#FF0000" }}
           >
-            <IconBrandYoutube size={18} stroke={1.5} />
+            <IconBrandYoutube size={20} stroke={1.5} />
           </ActionIcon>
         </Group>
       </Container>

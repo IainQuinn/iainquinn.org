@@ -13,16 +13,12 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import {
   IconArrowLeft,
   IconBrandGithub,
+  IconDownload,
   IconExternalLink,
+  IconFileText,
 } from "@tabler/icons-react";
 import { projects } from "../../data/projects";
 import classes from "./ProjectDetail.module.css";
-
-const statusColors: Record<string, string> = {
-  live: "phosphor",
-  wip: "amber",
-  archived: "gray",
-};
 
 const statusLabels: Record<string, string> = {
   live: "LIVE",
@@ -38,13 +34,11 @@ export default function ProjectDetail() {
   if (!project) {
     return (
       <Container size="md" py="xl">
-        <Text className={classes.notFound}>{"// 404 — project not found"}</Text>
+        <Text className={classes.notFound}>404 — project not found</Text>
         <Button
           component={Link}
           to="/projects"
           variant="outline"
-          color="phosphor"
-          radius={0}
           mt="md"
           leftSection={<IconArrowLeft size={14} />}
         >
@@ -61,8 +55,6 @@ export default function ProjectDetail() {
         <div>
           <ActionIcon
             variant="subtle"
-            color="phosphor"
-            radius={0}
             onClick={() => navigate("/projects")}
             aria-label="Back to projects"
           >
@@ -72,15 +64,13 @@ export default function ProjectDetail() {
 
         {/* Header */}
         <div>
-          <Text className={classes.sectionLabel}>{"// project"}</Text>
+          <Text className="section-label">project</Text>
           <Group align="center" gap="md" mt="xs" wrap="wrap">
-            <Title order={1} className={classes.pageTitle}>
+            <Title order={1} className="page-title">
               {project.title}
             </Title>
             <Badge
               variant="outline"
-              color={statusColors[project.status]}
-              radius={0}
               className={classes.statusBadge}
             >
               {statusLabels[project.status]}
@@ -91,12 +81,12 @@ export default function ProjectDetail() {
           </Group>
         </div>
 
-        <Divider color="phosphor" opacity={0.3} />
+        <Divider />
 
         {/* Description */}
         <div>
-          <Text className={classes.sectionLabel} mb="md">
-            {"// description"}
+          <Text className="section-label" mb="md">
+            description
           </Text>
           {project.longDescription.split("\n\n").map((para, i) => (
             <Text key={i} className={classes.bodyText} mb="md">
@@ -105,18 +95,63 @@ export default function ProjectDetail() {
           ))}
         </div>
 
+        {/* Document */}
+        {project.pdfUrl && (
+          <div>
+            <Text className="section-label" mb="md">
+              document
+            </Text>
+            <div className={classes.pdfFrame}>
+              <div className={classes.pdfBar}>
+                <Group gap={8} align="center" wrap="nowrap">
+                  <IconFileText size={16} />
+                  <Text className={classes.pdfName}>
+                    {project.pdfUrl.split("/").pop()}
+                  </Text>
+                </Group>
+                <Group gap={4} align="center" wrap="nowrap">
+                  <ActionIcon
+                    component="a"
+                    href={project.pdfUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variant="subtle"
+                    size="sm"
+                    aria-label="Open in new tab"
+                  >
+                    <IconExternalLink size={16} />
+                  </ActionIcon>
+                  <ActionIcon
+                    component="a"
+                    href={project.pdfUrl}
+                    download
+                    variant="subtle"
+                    size="sm"
+                    aria-label="Download"
+                  >
+                    <IconDownload size={16} />
+                  </ActionIcon>
+                </Group>
+              </div>
+              <iframe
+                src={`${project.pdfUrl}#toolbar=0&navpanes=0&view=FitH`}
+                title={`${project.title} — document`}
+                className={classes.pdfViewer}
+              />
+            </div>
+          </div>
+        )}
+
         {/* Tags */}
         <div>
-          <Text className={classes.sectionLabel} mb="md">
-            {"// stack"}
+          <Text className="section-label" mb="md">
+            stack
           </Text>
           <Group gap="xs">
             {project.tags.map((tag) => (
               <Badge
                 key={tag}
                 variant="outline"
-                color="phosphor"
-                radius={0}
                 className={classes.tag}
                 classNames={{ label: classes.tagLabel }}
               >
@@ -129,8 +164,8 @@ export default function ProjectDetail() {
         {/* Links */}
         {(project.githubUrl || project.liveUrl) && (
           <div>
-            <Text className={classes.sectionLabel} mb="md">
-              {"// links"}
+            <Text className="section-label" mb="md">
+              links
             </Text>
             <Group gap="md">
               {project.githubUrl && (
@@ -140,8 +175,6 @@ export default function ProjectDetail() {
                   target="_blank"
                   rel="noopener noreferrer"
                   variant="outline"
-                  color="phosphor"
-                  radius={0}
                   leftSection={<IconBrandGithub size={16} />}
                   className={classes.linkButton}
                 >
@@ -155,8 +188,6 @@ export default function ProjectDetail() {
                   target="_blank"
                   rel="noopener noreferrer"
                   variant="outline"
-                  color="amber"
-                  radius={0}
                   leftSection={<IconExternalLink size={16} />}
                   className={classes.linkButton}
                 >
@@ -167,14 +198,12 @@ export default function ProjectDetail() {
           </div>
         )}
 
-        <Divider color="phosphor" opacity={0.3} />
+        <Divider />
 
         <Button
           component={Link}
           to="/projects"
           variant="subtle"
-          color="phosphor"
-          radius={0}
           leftSection={<IconArrowLeft size={14} />}
           className={classes.backButton}
         >

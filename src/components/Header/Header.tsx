@@ -45,7 +45,7 @@ export function Header() {
         <Container size="xl" className={classes.inner}>
           <Link to="/" className={classes.logo}>
             <Group align="center" gap={8}>
-              <IconCode size={32} color="var(--mantine-color-phosphor-5)" />
+              <IconCode size={32} color="var(--mantine-color-text)" />
               <Title order={3} className={classes.logoText}>
                 iainquinn.org
               </Title>
@@ -87,7 +87,7 @@ export function Header() {
               opened={drawerOpened}
               onClick={toggleDrawer}
               size="sm"
-              color="var(--mantine-color-phosphor-5)"
+              color="var(--mantine-color-text)"
             />
           </Group>
         </Container>
@@ -98,7 +98,7 @@ export function Header() {
         onClose={closeDrawer}
         title={
           <Group gap={8}>
-            <IconCode size={24} color="var(--mantine-color-phosphor-5)" />
+            <IconCode size={24} color="var(--mantine-color-text)" />
             <Text fw={700} ff='"JetBrains Mono", monospace' size="sm">
               iainquinn.org
             </Text>

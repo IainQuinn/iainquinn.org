@@ -1,0 +1,24 @@
+/* Shared, theme-driven patterns. Colours come from Mantine semantic vars. */
+
+.page-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--mantine-color-text);
+}
+
+.section-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: var(--mantine-font-size-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mantine-color-dimmed);
+}
+
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 26px;
+  }
+}
