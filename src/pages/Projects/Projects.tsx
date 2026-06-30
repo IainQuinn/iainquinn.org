@@ -3,12 +3,6 @@ import { ProjectCard } from "../../components/ProjectCard/ProjectCard";
 import { projects } from "../../data/projects";
 import classes from "./Projects.module.css";
 
-const softwareProjects = projects.filter(
-  (p) => p.category === "software" || p.category === "science",
-);
-const hardwareProjects = projects.filter((p) => p.category === "hardware");
-const researchProjects = projects.filter((p) => p.category === "research");
-
 export default function Projects() {
   return (
     <Container size="lg" py="xl">
@@ -24,26 +18,8 @@ export default function Projects() {
           </Text>
         </div>
 
-        <Text className={classes.categoryLabel}>software</Text>
-
         <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing="md">
-          {softwareProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </SimpleGrid>
-
-        <Text className={classes.categoryLabel}>hardware</Text>
-
-        <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing="md">
-          {hardwareProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </SimpleGrid>
-
-        <Text className={classes.categoryLabel}>research</Text>
-
-        <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing="md">
-          {researchProjects.map((project) => (
+          {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </SimpleGrid>

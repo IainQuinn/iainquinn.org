@@ -2,10 +2,63 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="\code.svg" />
+    <link rel="icon" type="image/svg+xml" href="/code.svg" />
+    <link rel="apple-touch-icon" href="/code.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#000000" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Iain Quinn — Full Stack Developer & Computational Chemist</title>
     <meta name="description" content="Iain Quinn — Full Stack Developer, Computational Chemist, and Cheminformatician. Building scientific software at the intersection of chemistry and code." />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://iainquinn.org/" />
+    <meta property="og:title" content="Iain Quinn — Full Stack Developer & Computational Chemist" />
+    <meta property="og:description" content="Building scientific software at the intersection of chemistry and code." />
+    <meta property="og:image" content="https://iainquinn.org/og.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Iain Quinn — Full Stack Developer & Computational Chemist" />
+    <meta name="twitter:description" content="Building scientific software at the intersection of chemistry and code." />
+    <meta name="twitter:image" content="https://iainquinn.org/og.png" />
+
+    <link rel="canonical" href="https://iainquinn.org/" />
+
+    <!-- Prevent color-scheme flash before the bundle loads -->
+    <script>
+      (function () {
+        try {
+          var scheme = localStorage.getItem("iainquinn-color-scheme") || "dark";
+          if (scheme === "auto") {
+            scheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+          }
+          document.documentElement.setAttribute(
+            "data-mantine-color-scheme",
+            scheme
+          );
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Iain Quinn",
+        "url": "https://iainquinn.org",
+        "jobTitle": "Scientific Software Engineer",
+        "sameAs": [
+          "https://github.com/IainQuinn",
+          "https://www.linkedin.com/in/iain-quinn-/",
+          "https://www.youtube.com/@iainquinn"
+        ]
+      }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet" />

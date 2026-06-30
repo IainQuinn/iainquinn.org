@@ -1,17 +1,12 @@
 import { Badge, Card, Group, Stack, Text } from "@mantine/core";
 import { Link } from "react-router-dom";
-import type { Project } from "../../data/projects";
+import { IconArrowUpRight } from "@tabler/icons-react";
+import { categoryLabels, type Project } from "../../data/projects";
 import classes from "./ProjectCard.module.css";
 
 interface ProjectCardProps {
   project: Project;
 }
-
-const statusLabels: Record<Project["status"], string> = {
-  live: "LIVE",
-  wip: "WIP",
-  archived: "ARCHIVED",
-};
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
@@ -21,23 +16,21 @@ export function ProjectCard({ project }: ProjectCardProps) {
       className={classes.card}
       padding="lg"
     >
-      <Stack gap="sm" style={{ height: "100%" }}>
-        <Group justify="space-between" align="flex-start">
-          <Text className={classes.title}>{project.title}</Text>
-          <Badge
-            variant="outline"
-            size="xs"
-            className={classes.statusBadge}
-          >
-            {statusLabels[project.status]}
+      <Stack gap="sm" h="100%">
+        <Group justify="space-between" align="center" wrap="nowrap">
+          <Badge variant="outline" size="xs" className={classes.categoryBadge}>
+            {categoryLabels[project.category]}
           </Badge>
+          <IconArrowUpRight size={16} stroke={1.5} className={classes.arrow} />
         </Group>
+
+        <Text className={classes.title}>{project.title}</Text>
 
         <Text className={classes.description} style={{ flex: 1 }}>
           {project.description}
         </Text>
 
-        <Group gap="xs" mt="auto">
+        <Group gap="xs">
           {project.tags.map((tag) => (
             <Badge
               key={tag}

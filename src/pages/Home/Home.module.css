@@ -1,0 +1,39 @@
+.subtitle {
+  font-family: "JetBrains Mono", monospace;
+  font-size: var(--mantine-font-size-sm);
+  color: var(--mantine-color-dimmed);
+  letter-spacing: 0.02em;
+}
+
+.bio {
+  font-family: "JetBrains Mono", monospace;
+  font-size: var(--mantine-font-size-sm);
+  line-height: 1.8;
+  color: var(--mantine-color-text);
+}
+
+.currentItem {
+  font-family: "JetBrains Mono", monospace;
+  font-size: var(--mantine-font-size-sm);
+  line-height: 1.6;
+  color: var(--mantine-color-text);
+}
+
+.control {
+  font-family: "JetBrains Mono", monospace;
+  font-size: var(--mantine-font-size-sm);
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* Primary CTA: inverts with the theme (text colour as background, body as text). */
+.control.primary {
+  background-color: var(--mantine-color-text);
+  color: var(--mantine-color-body);
+  border: 1px solid var(--mantine-color-text);
+}
+
+.control.primary:hover {
+  background-color: var(--mantine-color-dimmed);
+  border-color: var(--mantine-color-dimmed);
+}

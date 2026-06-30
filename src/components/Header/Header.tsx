@@ -15,7 +15,6 @@ import { IconCode, IconMoon, IconSun } from "@tabler/icons-react";
 import classes from "./Header.module.css";
 
 const links = [
-  { link: "/about", label: "About" },
   { link: "/projects", label: "Projects" },
   { link: "/writing", label: "Writing" },
   { link: "/contact", label: "Contact" },
@@ -27,17 +26,33 @@ export function Header() {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const location = useLocation();
 
-  const navItems = links.map((link) => (
-    <Link
-      key={link.label}
-      to={link.link}
-      className={classes.link}
-      data-active={location.pathname === link.link || undefined}
-      onClick={closeDrawer}
+  const navItems = links.map((link) => {
+    const active = location.pathname === link.link;
+    return (
+      <Link
+        key={link.label}
+        to={link.link}
+        className={classes.link}
+        data-active={active || undefined}
+        aria-current={active ? "page" : undefined}
+        onClick={closeDrawer}
+      >
+        {link.label}
+      </Link>
+    );
+  });
+
+  const themeToggle = (
+    <ActionIcon
+      variant="subtle"
+      size="lg"
+      onClick={() => toggleColorScheme()}
+      aria-label="Toggle colour scheme"
+      className={classes.themeToggle}
     >
-      {link.label}
-    </Link>
-  ));
+      {colorScheme === "dark" ? <IconSun size={18} /> : <IconMoon size={18} />}
+    </ActionIcon>
+  );
 
   return (
     <>
@@ -54,35 +69,11 @@ export function Header() {
 
           <Group gap={4} visibleFrom="sm">
             {navItems}
-            <ActionIcon
-              variant="subtle"
-              size="lg"
-              onClick={() => toggleColorScheme()}
-              aria-label="Toggle colour scheme"
-              className={classes.themeToggle}
-            >
-              {colorScheme === "dark" ? (
-                <IconSun size={18} />
-              ) : (
-                <IconMoon size={18} />
-              )}
-            </ActionIcon>
+            {themeToggle}
           </Group>
 
           <Group hiddenFrom="sm" gap={8}>
-            <ActionIcon
-              variant="subtle"
-              size="lg"
-              onClick={() => toggleColorScheme()}
-              aria-label="Toggle colour scheme"
-              className={classes.themeToggle}
-            >
-              {colorScheme === "dark" ? (
-                <IconSun size={18} />
-              ) : (
-                <IconMoon size={18} />
-              )}
-            </ActionIcon>
+            {themeToggle}
             <Burger
               opened={drawerOpened}
               onClick={toggleDrawer}

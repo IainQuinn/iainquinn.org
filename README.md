@@ -14,19 +14,27 @@ Live at [iainquinn.org](https://iainquinn.org)
 
 ## Design
 
-8-bit scientific aesthetic — Space Grotesk headings, JetBrains Mono body text, phosphor green and amber accents.
+Minimal, monochrome black-and-white palette that inverts between light and dark, set entirely in JetBrains Mono. The whole look is driven from a single Mantine theme ([`src/theme.ts`](src/theme.ts)).
 
 ## Dev
 
+This repo uses [pnpm](https://pnpm.io/) (enforced via `only-allow`).
+
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 ## Build
 
 ```bash
-npm run build
+pnpm build
+```
+
+## Checks
+
+```bash
+pnpm check   # typecheck + lint
 ```
 
 ## Project content

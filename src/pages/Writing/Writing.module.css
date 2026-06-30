@@ -1,3 +1,11 @@
+.subtitle {
+  font-family: "JetBrains Mono", monospace;
+  font-size: var(--mantine-font-size-sm);
+  color: var(--mantine-color-dimmed);
+  max-width: 560px;
+  line-height: 1.7;
+}
+
 .card {
   border: 1px solid var(--mantine-color-default-border);
   background-color: light-dark(

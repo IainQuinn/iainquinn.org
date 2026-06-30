@@ -1,32 +1,21 @@
-// Layout.tsx
 import { Container, Box } from "@mantine/core";
 import { Outlet } from "react-router-dom";
 import { Header } from "../Header/Header";
 import { Footer } from "../Footer/Footer";
+import classes from "./Layout.module.css";
 
 export function Layout() {
   return (
-    <Container
-      fluid
-      p={0}
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        minHeight: "100vh",
-      }}
-    >
-      {/* Header */}
-      <Box component="header" style={{ flex: "0 0 auto" }}>
+    <Container fluid p={0} className={classes.root}>
+      <Box component="header" className={classes.header}>
         <Header />
       </Box>
 
-      {/* Main content */}
-      <Box component="main" style={{ flex: "1 1 auto", display: "flex", flexDirection: "column" }}>
+      <Box component="main" className={classes.main}>
         <Outlet />
       </Box>
 
-      {/* Footer */}
-      <Box component="footer" style={{ flex: "0 0 auto" }}>
+      <Box component="footer" className={classes.footer}>
         <Footer />
       </Box>
     </Container>

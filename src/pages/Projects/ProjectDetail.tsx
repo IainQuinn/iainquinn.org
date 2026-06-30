@@ -17,14 +17,8 @@ import {
   IconExternalLink,
   IconFileText,
 } from "@tabler/icons-react";
-import { projects } from "../../data/projects";
+import { projects, statusLabels } from "../../data/projects";
 import classes from "./ProjectDetail.module.css";
-
-const statusLabels: Record<string, string> = {
-  live: "LIVE",
-  wip: "WIP",
-  archived: "ARCHIVED",
-};
 
 export default function ProjectDetail() {
   const { id } = useParams<{ id: string }>();

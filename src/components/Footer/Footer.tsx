@@ -24,36 +24,36 @@ export function Footer() {
           <ActionIcon
             size="md"
             variant="subtle"
+            color="gray"
             component="a"
             href="https://github.com/IainQuinn"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
-            style={{ color: "#ffffff" }}
           >
             <IconBrandGithub size={20} stroke={1.5} />
           </ActionIcon>
           <ActionIcon
             size="md"
             variant="subtle"
+            color="gray"
             component="a"
             href="https://www.linkedin.com/in/iain-quinn-/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            style={{ color: "#0A66C2" }}
           >
             <IconBrandLinkedin size={20} stroke={1.5} />
           </ActionIcon>
           <ActionIcon
             size="md"
             variant="subtle"
+            color="gray"
             component="a"
             href="https://www.youtube.com/@iainquinn"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="YouTube"
-            style={{ color: "#FF0000" }}
           >
             <IconBrandYoutube size={20} stroke={1.5} />
           </ActionIcon>
